@@ -37,7 +37,7 @@ This project implements a face recognition-based attendance system using Python 
    pip install -r requirements.txt
 
    
-##🧠 Training the Model
+##  🧠 Training the Model
 1. Add training images in a folder structure like:
     dataset/
     ├── person1/
@@ -52,12 +52,12 @@ This project implements a face recognition-based attendance system using Python 
 
 This will generate trainer.yml and labels.pickle.
 
-##💻 Running the App
+##  💻 Running the App
 Start the Flask app:
 
 python app.py
 
 
-##📄 License
+##  📄 License
 This project is open-source and available under the MIT License.
 
