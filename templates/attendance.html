@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Attendance System</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Orbitron:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="pulse">Attendance System</h1>
+        <div class="video-container floating">
+            <img src="{{ url_for('attendance_feed') }}">
+        </div>
+        <div class="attendance-list floating">
+            <h2>Attendance Records</h2>
+            <table id="attendanceTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Time</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div class="controls">
+                <a href="{{ url_for('back_to_register') }}" class="btn btn-accent shake">Register New User</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Fetch attendance data every 3 seconds
+        setInterval(() => {
+            fetch('/get_attendance')
+                .then(response => response.json())
+                .then(data => {
+                    const table = document.querySelector('#attendanceTable tbody');
+                    table.innerHTML = data.map(row => `
+                        <tr>
+                            <td>${row.Name}</td>
+                            <td>${row.Time}</td>
+                            <td><span class="status status-active"></span> Present</td>
+                        </tr>
+                    `).join('');
+                    
+                    // Add shake effect to new entries
+                    if (data.length > 0) {
+                        const newRow = table.lastElementChild;
+                        newRow.classList.add('shake');
+                        setTimeout(() => newRow.classList.remove('shake'), 1000);
+                    }
+                });
+        }, 3000);
+    </script>
+</body>
+</html>
