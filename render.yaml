@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: face-attendance-app
+    env: python
+    buildCommand: |
+      pip install -r requirements.txt
+      python train.py
+    startCommand: python app.py
+    plan: free
