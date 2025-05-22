@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Capture Images</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Orbitron:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="capture-container floating">
+        <h1 class="pulse">Capture Images for {{ username }}</h1>
+        <div class="video-container">
+            <img src="{{ url_for('video_feed', username=username) }}">
+        </div>
+        <div class="controls">
+            <a href="{{ url_for('save_image', username=username) }}" class="btn shake">Capture Image</a>
+            <a href="{{ url_for('attendance') }}" class="btn btn-accent shake">Finish</a>
+        </div>
+    </div>
+</body>
+</html>
