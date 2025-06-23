@@ -53,11 +53,5 @@ This project implements a face recognition-based attendance system using Python 
 This will generate trainer.yml and labels.pickle.
 
 ##  💻 Running the App
-Start the Flask app:
-
-python app.py
-
-
-##  📄 License
-This project is open-source and available under the MIT License.
+https://face-recognition-attendance-system-6.onrender.com
 
