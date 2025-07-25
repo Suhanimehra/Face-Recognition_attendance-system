@@ -1,4 +1,5 @@
 opencv-contrib-python 
 numpy 
 pandas
-Flask
+flask
+sqlite3
