@@ -6,12 +6,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Orbitron:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="register-bg-glass">
-        <div class="form-container glass-card floating">
+    <div class="form-container floating">
         <h1 class="pulse">User Registration</h1>
         <form method="POST" action="/register">
             <input type="text" name="name" placeholder="Full Name" value="{{ name }}" required>
             <input type="text" name="enrollment" placeholder="Enrollment Number" value="{{ enrollment }}" required>
+            
             <div class="form-row">
                 <select name="branch" required>
                     <option value="" disabled selected>Select Branch</option>
@@ -20,6 +20,7 @@
                     <option value="ME">Mechanical</option>
                     <option value="CE">Civil</option>
                 </select>
+                
                 <select name="year" required>
                     <option value="" disabled selected>Select Year</option>
                     <option value="1">First Year</option>
@@ -28,21 +29,14 @@
                     <option value="4">Fourth Year</option>
                 </select>
             </div>
-                <div class="form-row">
-                    <select name="class" required>
-                        <option value="" disabled selected>Select Class</option>
-                        <option value="B.Tech">B.Tech</option>
-                        <option value="M.Tech">M.Tech</option>
-                        <option value="Diploma">Diploma</option>
-                    </select>
-                </div>
+            
             <input type="email" name="email" placeholder="Email Address" required>
+            
             <div class="form-actions">
                 <button type="submit" class="btn shake">Continue to Image Capture</button>
                 <a href="/front" class="btn btn-secondary shake">Back</a>
             </div>
         </form>
-        </div>
     </div>
 </body>
 </html>
