@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Face Recognition System</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Orbitron:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="front-bg-glass">
+        <div class="front-container glass-card floating" style="max-width: 400px; margin: 0 auto;">
+            <h1 class="pulse">Face Recognition Attendance</h1>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <div class="flash-messages">
+                        {% for message in messages %}
+                            <div class="flash">{{ message }}</div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+            <div style="margin-top:3rem; text-align:center; display:flex; flex-direction:column; gap:1.5rem;">
+                <a href="/student_portal" class="btn btn-accent shake" style="font-size:1.2rem;">Student Login</a>
+                <a href="/admin_login" class="btn btn-secondary shake" style="font-size:1.2rem;">Admin Login</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

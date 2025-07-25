@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Orbitron:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="register-bg-glass">
+        <div class="form-container glass-card floating">
+            <h1 class="pulse">Student Dashboard</h1>
+            <div class="video-container glass-card floating" style="margin-bottom: 1.5rem;">
+                <img src="{{ url_for('attendance_feed') }}">
+            </div>
+            <p style="text-align:center; font-weight:600;">Look at the camera to mark your attendance.</p>
+            <p>Welcome, {{ name }}!</p>
+            <h2>Your Attendance Records</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date & Time</th>
+                        <th>Class</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for record in records %}
+                    <tr>
+                        <td>{{ record.Time }}</td>
+                        <td>{{ record.Class }}</td>
+                        <td><span class="status status-active"></span> Present</td>
+                    </tr>
+                    {% else %}
+                    <tr><td colspan="3">No attendance records found.</td></tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <div class="form-actions">
+                <a href="/student_logout" class="btn btn-secondary shake">Logout</a>
+                <a href="/front" class="btn btn-accent shake">Back to Home</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
