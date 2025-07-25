@@ -1,4 +1,1 @@
-opencv-contrib-python 
-numpy 
-pandas
-sqlite3
+
